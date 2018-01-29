@@ -79,7 +79,7 @@ var isRepeat = function(arr) {  //arr是否有重复元素
     return false;
 };
 
-// 
+ 
 /**
  * 根据数组对象某一属性排序  data.sort(keysrt("firstWord"));
  */
@@ -96,3 +96,4 @@ var keysrt = function(propertyName) {
     }
   }
 }
+
