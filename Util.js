@@ -78,3 +78,21 @@ var isRepeat = function(arr) {  //arr是否有重复元素
     }
     return false;
 };
+
+// 
+/**
+ * 根据数组对象某一属性排序  data.sort(keysrt("firstWord"));
+ */
+var keysrt = function(propertyName) {
+  return function(object1, object2) {
+    var value1 = object1[propertyName];
+    var value2 = object2[propertyName];
+    if (value2 < value1) {
+      return 1;
+    } else if (value2 > value1) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+}
