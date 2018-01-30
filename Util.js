@@ -97,3 +97,42 @@ var keysrt = function(propertyName) {
   }
 }
 
+/**
+ * 完美判断是否为网址
+ */
+function IsURL(strUrl) {
+    var regular = /^\b(((https?|ftp):\/\/)?[-a-z0-9]+(\.[-a-z0-9]+)*\.(?:com|edu|gov|int|mil|net|org|biz|info|name|museum|asia|coop|aero|[a-z][a-z]|((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d))\b(\/[-a-z0-9_:\@&?=+,.!\/~%\$]*)?)$/i;
+    if (regular.test(strUrl)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+/**
+ * 检验URL链接是否有效
+ * 
+ * .Open("GET",URL, false) true:异步；false:同步
+ */
+function getUrlState(URL) {
+    var suc = false;
+    var xmlhttp = new ActiveXObject("microsoft.xmlhttp");
+    xmlhttp.Open("GET", URL, false);
+    try {
+        xmlhttp.Send();
+    } catch (e) {
+    } finally {
+        var result = xmlhttp.responseText;
+        if (result) {
+            if (xmlhttp.Status == 200) {
+                suc = true;
+            } else {
+                suc = false;
+            }
+        } else {
+            suc = false;
+        }
+    }
+    return suc;
+}
