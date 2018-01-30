@@ -1,4 +1,4 @@
-
+AboutFront.js
 /**
  * 将child节点插入到parent中，使其成为第n个子节点
  * @param  {[type]} parent [description]
