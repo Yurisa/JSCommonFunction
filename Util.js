@@ -160,7 +160,7 @@ $.fn.serializeObject = function()
                 });
                 return o;
             };
-});
+
 
 /**
  * 对对象某一数值排序,数值相同按字典序排序
