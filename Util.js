@@ -161,3 +161,12 @@ $.fn.serializeObject = function()
                 return o;
             };
 });
+
+/**
+ * 对对象某一数值排序,数值相同按字典序排序
+ */
+data.sort(function(a, b){
+    let s = a.name.toLowerCase();  
+    let t = b.name.toLowerCase();  
+    return a.score !== b.score ? a.score - b.score : s < t ? -1 : 1;
+ })
