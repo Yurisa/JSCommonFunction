@@ -11,3 +11,10 @@ function statistics(str) {
         }
         return obj;
 }
+
+/**
+ * 字符串去空格
+ */
+String.prototype.trim = function(){
+        return this.replace(/(^\s*)|(\s*$)/g, "");
+}
