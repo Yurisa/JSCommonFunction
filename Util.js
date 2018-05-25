@@ -170,3 +170,19 @@ data.sort(function(a, b){
     let t = b.name.toLowerCase();  
     return a.score !== b.score ? a.score - b.score : s < t ? -1 : 1;
  })
+
+/**
+ * 数组扁平化
+ * @param {*} arr 
+ */
+ function flattern(arr){
+    let newArray = []
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] instanceof Array){
+            newArray = newArray.concat(flattern(arr[i]))
+        }else{
+            newArray.push(arr[i])
+        }
+    }
+    return newArray
+}
