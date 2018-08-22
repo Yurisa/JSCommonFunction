@@ -186,3 +186,21 @@ data.sort(function(a, b){
     }
     return newArray
 }
+
+/**
+ * 事件防抖
+ * @param {*} func 
+ * @param {*} wait 
+ * @param  {...any} args 
+ */
+const debounce = (func, wait, ...args) => {
+    let timeout;
+    return function(){
+      const context = this;
+      if (timeout) clearTimeout(timeoout);
+      timeout = setTimeout(() => {
+        func.apply(context, ...args)
+      },wait);
+    }
+}
+  
